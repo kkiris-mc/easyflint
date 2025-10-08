@@ -1,0 +1,28 @@
+{
+	"pack": {
+		{% if format %}
+		"pack_format": {{ format }},
+		{% endif %}
+
+		{% if min_format and max_format %}
+		"min_format": {{ min_format | jsonify }},
+		"max_format": {{ max_format | jsonify }},
+{% comment %}append turns a value into a string and splitting by a delimiter that isn't present creates a one-value array. if already an array, split does nothing{% endcomment %}
+{% assign min_array = min_format | append: "" | split: "^" %}
+{% assign max_array = max_format | append: "" | split: "^" %}
+		{% if min_array.first < 82 %}
+		"supported_formats": [{{ min_array.first }}, {{ max_array.first }}],
+		{% endif %}
+		{% endif %}
+
+		{% if version %}
+		"version": "{{ version }}",
+		{% endif %}
+		
+		{% if name %}
+		"name": "{{ name }}",
+		{% endif %}
+
+		"description": {{ description | jsonify }}
+	}
+}

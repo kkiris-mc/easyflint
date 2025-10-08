@@ -1,0 +1,8 @@
+name: Liquid Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  liquid-build:
+    uses: kkiris/liquid-build/.github/workflows/liquid-build.yml@dev

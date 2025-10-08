@@ -1,0 +1,100 @@
+{%- assign object_authors = '' | split: ',' -%}
+{%- assign string_authors = '' | split: ',' -%}
+{%- assign listed_authors = '' | split: ',' -%}
+
+{%- if author %}
+	{%- assign string_authors = string_authors | push: author %}
+	{%- assign listed_authors = listed_authors | push: author %}
+	
+{%- endif %}
+
+{%- for entry in authors %}
+	{%- if entry.name %}
+		{%- assign object_authors = object_authors | push: entry %}
+		{%- assign temp_name = entry.name %}
+		{%- assign listed_authors = listed_authors | push: temp_name %}
+	{%- else %}
+		{%- assign string_authors = string_authors | push: entry %}
+		{%- assign listed_authors = listed_authors | push: entry %}
+	{%- endif %}
+{%- endfor %}
+
+{%- assign object_contributors = '' | split: ',' -%}
+{%- assign string_contributors = '' | split: ',' -%}
+
+{%- for entry in contributors %}
+	{%- if entry.name %}
+		{%- assign object_contributors = object_contributors | push: entry %}
+	{%- else %}
+		{%- assign string_contributors = string_contributors | push: entry %}
+	{%- endif %}
+{%- endfor %}
+
+{%- capture authors_json -%}
+[
+{%- assign _first = true -%}
+{%- for author in object_authors %}
+{%- unless _first -%},{% endunless -%}
+	{{ author | jsonify }}
+	{%- assign _first = false -%}
+{%- endfor %}
+
+{%- for author in string_authors %}
+{%- unless _first -%},{% endunless -%}
+	{
+		"name": {{ author | jsonify }},
+		"role": "author"
+	}
+	{%- assign _first = false -%}
+{%- endfor %}
+]
+{%- endcapture -%}
+
+{%- capture contributors_json -%}
+[
+{%- assign _first = true -%}
+{%- for contributor in object_contributors %}
+{%- unless _first -%},{% endunless -%}
+	{{ contributor | jsonify }}
+	{%- assign _first = false -%}
+{%- endfor %}
+
+{%- for contributor in string_contributors %}
+{%- unless _first -%},{% endunless -%}
+	{
+		"name": {{ contributor | jsonify }},
+		"role": "contributor"
+	}
+	{%- assign _first = false -%}
+{%- endfor %}
+]
+{%- endcapture -%}
+
+{%- capture contributor_keys -%}
+{
+{%- assign _first = true -%}
+{%- for author in object_authors %}
+{%- unless _first -%},{% endunless -%}
+	"{{ author.name }}": {{ author.role }}
+	{%- assign _first = false -%}
+{%- endfor %}
+
+{%- for author in string_authors %}
+{%- unless _first -%},{% endunless -%}
+	"{{ author }}": "author"
+	{%- assign _first = false -%}
+{%- endfor %}
+
+{%- for contributor in object_contributors %}
+	{%- if not _first -%},{% endif -%}
+	"{{ contributor.name }}": {{ contributor.role }}
+	{%- assign _first = false -%}
+{%- endfor %}
+
+{%- for contributor in string_contributors %}
+	{%- if not _first -%},{% endif -%}
+	"{{ contributor }}": "contributor"
+	{%- assign _first = false -%}
+{%- endfor %}
+}
+{%- endcapture -%}

@@ -1,0 +1,20 @@
+{%- include "authors.liquid" -%}
+{
+	"schemaVersion":1,
+	"id": "{{ mod_id | default: name | downcase | replace: " ", "_" }}",
+	"version": "{{ version }}{% unless no_build_in_version %}+{{ build }}{% endunless %}",
+	"name": "{{ name }}",
+	"description": {{ mod_description | default: description | jsonify }},
+	"contact":{
+		"homepage":"{{ homepage }}",
+		"sources":"{{ source }}"
+	},
+	"authors": {{ authors_json }},
+	"contributors": {{ contributors_json }},
+	"license": "{{ license }}",
+	"icon": "{{ icon | default: "pack.png" }}",
+	"environment": "*",
+	"suggests":{
+		"fabric-resource-loader-v0":"*",
+		"minecraft":">=1.13"}
+}

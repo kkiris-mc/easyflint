@@ -1,0 +1,9 @@
+# node
+node_modules/
+package.json
+package-lock.json
+
+# scripts & output
+script/
+rendered/
+packaged/

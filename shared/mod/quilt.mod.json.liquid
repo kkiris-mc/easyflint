@@ -1,0 +1,28 @@
+{%- include "authors.liquid" -%}
+{
+	"schemaVersion":1,
+	"id": "{{ mod_id | default: name | downcase | replace: " ", "_" }}",
+	"version": "{{ version }}{% unless no_build_in_version %}+{{ build }}{% endunless %}",
+	"metadata":{
+		"name": "{{ name }}",
+		"description": {{ mod_description | default: description | jsonify }},
+		"contact":{
+			"homepage":"{{ homepage }}",
+			"sources":"{{ source }}"
+		},
+		"contributors": {{ contributor_keys }},
+		"license": "{{ license }}",
+		"icon": "{{ icon | default: "pack.png" }}"
+	},
+	"intermediate_mappings":"net.fabricmc:intermediary",
+	"suggests": [
+		{
+			"id":"quilt_resource_loader",
+			"versions":"*",
+			"unless":"fabric-resource-loader-v0"
+		},{
+			"id": "minecraft",
+			"versions": ">=1.13"
+		}
+	]
+}

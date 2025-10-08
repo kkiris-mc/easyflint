@@ -1,0 +1,46 @@
+{
+	"pf4": {
+		"format": 4
+	},
+	"pf5": {
+		"format": 5
+	},
+	"pf6": {
+		"format": 6
+	},
+	"pf7": {
+		"format": 7
+	},
+	"pf8": {
+		"format": 8
+	},
+	"pf9": {
+		"format": 9
+	},
+	"pf10": {
+		"format": 10
+	},
+	"pf11": {
+		"format": 11
+	},
+	"pf12": {
+		"format": 12
+	},
+	"pf13": {
+		"format": 13
+	},
+	"pf14": {
+		"format": 14
+	},
+	"pf15-88": {
+		"format": 15,
+		"min_format": 15,
+		"max_format": [88]
+	},
+	"mod": {
+		"format": 15,
+		"min_format": 4,
+		"max_format": [88],
+		"groups": ["mod"]
+	}
+}
