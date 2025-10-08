@@ -2,5 +2,14 @@
 	"mod": {
 		"_ext": "jar",
 		"no_build_in_version": "true"
+	},
+	"-44": {
+		"min_format": 4,
+		"max_format": [44]
+	},
+	"45-": {
+		"format": 45,
+		"min_format": 45,
+		"max_format": [88]
 	}
 }

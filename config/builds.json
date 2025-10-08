@@ -1,46 +1,64 @@
 {
 	"pf4": {
-		"format": 4
+		"format": 4,
+		"groups": ["-44"]
 	},
 	"pf5": {
-		"format": 5
+		"format": 5,
+		"groups": ["-44"]
 	},
 	"pf6": {
-		"format": 6
+		"format": 6,
+		"groups": ["-44"]
 	},
 	"pf7": {
-		"format": 7
+		"format": 7,
+		"groups": ["-44"]
 	},
 	"pf8": {
-		"format": 8
+		"format": 8,
+		"groups": ["-44"]
 	},
 	"pf9": {
-		"format": 9
+		"format": 9,
+		"groups": ["-44"]
 	},
 	"pf10": {
-		"format": 10
+		"format": 10,
+		"groups": ["-44"]
 	},
 	"pf11": {
-		"format": 11
+		"format": 11,
+		"groups": ["-44"]
 	},
 	"pf12": {
-		"format": 12
+		"format": 12,
+		"groups": ["-44"]
 	},
 	"pf13": {
-		"format": 13
+		"format": 13,
+		"groups": ["-44"]
 	},
 	"pf14": {
-		"format": 14
+		"format": 14,
+		"groups": ["-44"]
 	},
-	"pf15-88": {
+	"pf15-44": {
 		"format": 15,
 		"min_format": 15,
-		"max_format": [88]
+		"max_format": [44],
+		"groups": ["-44"]
 	},
-	"mod": {
+	"mod_4-44": {
 		"format": 15,
 		"min_format": 4,
-		"max_format": [88],
-		"groups": ["mod"]
+		"max_format": [44],
+		"groups": ["mod","-44"]
+	},
+	"pf45-88": {
+		"groups": ["45-"]
+	},
+	"mod_45-88": {
+		"groups": ["mod","45-"]
 	}
 }
