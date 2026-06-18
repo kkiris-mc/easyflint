@@ -63,10 +63,10 @@
 		"groups": ["mod","45-"],
 		"max_format": [94]
 	},
-	"dp26": {
+	"mc26": {
 		"groups": ["45-","26.x"]
 	},
-	"mod26": {
+	"mod_mc26": {
 		"groups": ["mod","45-","26.x"]
 	}
 }

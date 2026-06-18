@@ -5,15 +5,18 @@
 	},
 	"-44": {
 		"min_format": 4,
-		"max_format": [44]
+		"max_format": [44],
+		"suggests_mc": ">=1.13 <1.21"
 	},
 	"45-": {
 		"format": 45,
-		"min_format": 45
+		"min_format": 45,
+		"suggests_mc": "^1.21"
 	},
 	"26.x": {
 		"format": 95,
 		"min_format": 95,
-		"max_format": [107]
+		"max_format": [107],
+		"suggests_mc": ">=26.1"
 	}
 }

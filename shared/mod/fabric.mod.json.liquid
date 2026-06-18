@@ -2,7 +2,7 @@
 {
 	"schemaVersion":1,
 	"id": "{{ mod_id | default: name | downcase | replace: " ", "_" }}",
-	"version": "{{ version }}{% unless no_build_in_version %}+{{ build }}{% endunless %}",
+	"version": "{{ version }}{% unless no_build_in_version %}+{{ _build }}{% endunless %}",
 	"name": "{{ name }}",
 	"description": {{ mod_description | default: description | jsonify }},
 	"contact":{
@@ -12,9 +12,9 @@
 	"authors": {{ authors_json }},
 	"contributors": {{ contributors_json }},
 	"license": "{{ license }}",
-	"icon": "{{ icon | default: "pack.png" }}",
+	"icon": "{{ icon | default: 'pack.png' }}",
 	"environment": "*",
 	"suggests":{
 		"fabric-resource-loader-v0":"*",
-		"minecraft":">=1.13"}
+		"minecraft":"{{ suggests_mc | default: '>=1.13' }}"}
 }

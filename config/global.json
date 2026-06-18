@@ -6,5 +6,6 @@
 	"description": "Craft Gravel to Flint 1:1\n\u00a7d\u00a7l-kk iris",
 	"mod_description": "Craft Gravel to Flint 1:1",
 	"homepage": "https://modrinth.com/mod/easyflint",
-	"source": "https://github.com/kkiris-mc/easyflint"
+	"source": "https://github.com/kkiris-mc/easyflint",
+	"_output": "{{ name }} v{{ version }}+{{ _build | remove_first: 'mod_' }}.{{ _ext }}"
 }

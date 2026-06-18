@@ -5,7 +5,7 @@ showAsDataPack = true
 
 [[mods]]
 modId = "{{ mod_id | default: name | downcase | replace: " ", "_" }}"
-version = "{{ version }}{% unless no_build_in_version %}+{{ build }}{% endunless %}"
+version = "{{ version }}{% unless no_build_in_version %}+{{ _build }}{% endunless %}"
 displayName = "{{ name }}"
 description = {{ mod_description | default: description | jsonify }}
 logoFile = "pack.png"
