@@ -12,3 +12,7 @@ No need to unzip the file or anything; just drop it right into the `datapacks` f
 
 Have fun!
 <br/>-kk iris
+
+---
+
+This project is also an example use-case for [liquid-build](https://github.com/kkiris/liquid-build), a tool for rendering Liquid templates & creating packages with shared files/variables.
