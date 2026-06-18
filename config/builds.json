@@ -49,16 +49,24 @@
 		"max_format": [44],
 		"groups": ["-44"]
 	},
-	"mod_4-44": {
+	"mod_pf4-44": {
 		"format": 15,
 		"min_format": 4,
 		"max_format": [44],
 		"groups": ["mod","-44"]
 	},
-	"pf45-": {
-		"groups": ["45-"]
+	"pf45-94": {
+		"groups": ["45-"],
+		"max_format": [94]
 	},
-	"mod_45-94": {
-		"groups": ["mod","45-"]
+	"mod_pf45-94": {
+		"groups": ["mod","45-"],
+		"max_format": [94]
+	},
+	"dp26": {
+		"groups": ["45-","26.x"]
+	},
+	"mod26": {
+		"groups": ["mod","45-","26.x"]
 	}
 }

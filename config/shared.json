@@ -9,7 +9,11 @@
 	},
 	"45-": {
 		"format": 45,
-		"min_format": 45,
-		"max_format": [94]
+		"min_format": 45
+	},
+	"26.x": {
+		"format": 95,
+		"min_format": 95,
+		"max_format": [107]
 	}
 }
